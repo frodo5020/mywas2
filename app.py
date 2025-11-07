@@ -12,12 +12,12 @@ app = Flask(__name__)
 app.secret_key = 'frodo'
 
 # 세션을 파일 시스템에 저장
-#app.config['SESSION_TYPE'] = 'filesystem'
-#app.config['SESSION_FILE_DIR'] = './flask_session/'
-#app.config['SESSION_PERMANENT'] = False
-#app.config['SESSION_USE_SIGNER'] = True
-#app.config['SESSION_KEY_PREFIX'] = 'session:'
-#Session(app)
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SESSION_FILE_DIR'] = './flask_session/'
+app.config['SESSION_PERMANENT'] = False
+app.config['SESSION_USE_SIGNER'] = True
+app.config['SESSION_KEY_PREFIX'] = 'session:'
+Session(app)
 
 # 세션을 Redis에 저장
 app.config['SESSION_TYPE'] = 'redis'
